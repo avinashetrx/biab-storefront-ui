@@ -20,6 +20,7 @@ RUN apk update && apk upgrade
 RUN apk add --no-cache nodejs=14.18.1-r0 npm=14.18.1-r0
 RUN npm install -g yarn
 COPY --from=build /app /usr/share/nginx/html
+COPY --from=build /app/nginx.conf.j2 /etc/nginx/nginx.conf
 WORKDIR /usr/share/nginx/html
 EXPOSE 8080
 RUN chmod +x entrypoint.sh

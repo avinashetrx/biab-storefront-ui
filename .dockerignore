@@ -3,4 +3,5 @@ node_modules
 .dockerfile
 README.md
 ansible
-nginx.conf.j2
+# nginx.conf.j2
+docker-compose.yml
